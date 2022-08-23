@@ -1,5 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
-import { Training } from './training.model';
+import { Body, Controller, Delete, Get, Param, Patch } from '@nestjs/common';
+import { DeleteTrainingResponse, Training } from './training.model';
 import { TrainingsService } from './trainings.service';
 
 @Controller('trainings')
@@ -8,7 +8,7 @@ export class TrainingsController {
 
     @Get('/')
     getAllTrainings(): Promise<Training> {
-        return this.trainingsService.getAllTrainings(user);
+        return this.trainingsService.getAllTrainings();
     }
 
     @Get('/:title/:date')
@@ -50,7 +50,7 @@ export class TrainingsController {
     editTraining(
         @Body() editTrainingDto: EditExerciseDto,
 
-    ) {
+    ): any {
         return this.trainingsService.editExercise(editTrainingDto);
     }
 
