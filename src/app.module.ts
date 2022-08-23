@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ExerciseEntity } from './trainings/exercise.entity';
 import { TrainingsModule } from './trainings/trainings.module';
 import { AuthModule } from './auth/auth.module';
+import { UsersEntity } from './auth/user.entity';
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import { AuthModule } from './auth/auth.module';
       username: 'root',
       password: '',
       database: 'trainings_diary',
-      entities: [ExerciseEntity],
+      entities: [ExerciseEntity, UsersEntity],
       synchronize: true,
     }),
     TrainingsModule,
