@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Exclude } from "class-transformer";
+import { UsersEntity } from "src/auth/user.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class ExerciseEntity {
@@ -31,4 +33,9 @@ export class ExerciseEntity {
     })
     weights: string;
 
+    @ManyToOne(_type => UsersEntity, user => user.exercises, { eager: false })
+    @Exclude({
+        toPlainOnly: true,
+    })
+    user: UsersEntity;
 }
