@@ -9,7 +9,6 @@ import { DeleteTrainingResponse, Exercise, Training } from './training.model';
 
 @Injectable()
 export class TrainingsService {
-
     constructor(
         @InjectRepository(ExerciseEntity) private trainingsRepository: Repository<ExerciseEntity>,
     ) { }
@@ -43,7 +42,6 @@ export class TrainingsService {
             .where({ user })
             .orderBy('trainings.date', 'DESC')
             .getRawMany();
-
     }
 
 
@@ -56,7 +54,6 @@ export class TrainingsService {
     }
 
     async deleteExercise(title: string, date: Date, user: UsersEntity): Promise<DeleteTrainingResponse> {
-
 
         const result = await this.trainingsRepository.delete({ title, date: new Date(date), user });
         if (result.affected === 0) {

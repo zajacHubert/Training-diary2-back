@@ -1,5 +1,4 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put, UseGuards } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 import { AuthGuard } from '@nestjs/passport';
 import { GetUser } from 'src/auth/get-user.decorator';
 import { UsersEntity } from 'src/auth/user.entity';
@@ -11,10 +10,7 @@ import { TrainingsService } from './trainings.service';
 @Controller('trainings')
 @UseGuards(AuthGuard())
 export class TrainingsController {
-    constructor(
-        private trainingsService: TrainingsService,
-
-    ) { }
+    constructor(private trainingsService: TrainingsService) { }
 
     @Get('/')
     getAllTrainings(
@@ -29,7 +25,6 @@ export class TrainingsController {
         @Param('date') date: Date,
         @GetUser() user: UsersEntity,
     ): Promise<Training> {
-
         return this.trainingsService.getTrainingByTitleAndDate(title, date, user);
     }
 

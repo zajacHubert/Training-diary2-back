@@ -5,7 +5,6 @@ export interface Exercise {
     exerciseName: string;
     reps: string;
     weights: string;
-
 }
 
 export type Training = Exercise[];
