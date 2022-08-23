@@ -1,5 +1,7 @@
-import { Body, Controller, Delete, Get, Param, Patch } from '@nestjs/common';
-import { DeleteTrainingResponse, Training } from './training.model';
+import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { CreateExerciseDto } from './dto/create-exercise.dto';
+import { EditExerciseDto } from './dto/edit-exercise.dto';
+import { DeleteTrainingResponse, Exercise, Training } from './training.model';
 import { TrainingsService } from './trainings.service';
 
 @Controller('trainings')
