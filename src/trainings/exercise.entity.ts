@@ -4,6 +4,7 @@ import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class ExerciseEntity {
+
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
