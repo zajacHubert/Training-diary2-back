@@ -12,6 +12,7 @@ async function bootstrap() {
     origin: 'http://localhost:3000',
   });
 
-  await app.listen(3001);
+  const port = process.env.PORT;
+  await app.listen(port);
 }
 bootstrap();
