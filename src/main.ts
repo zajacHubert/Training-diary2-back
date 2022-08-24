@@ -8,9 +8,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalInterceptors(new TransformInterceptor());
 
-  app.enableCors({
-    origin: 'http://localhost:3000',
-  });
+  app.enableCors();
 
   const port = process.env.PORT;
   await app.listen(port);
