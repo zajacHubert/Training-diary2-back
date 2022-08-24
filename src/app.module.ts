@@ -29,7 +29,7 @@ import { configValidationSchema } from './config.schema';
           host: configService.get('DB_HOST'),
           port: configService.get('DB_PORT'),
           username: configService.get('DB_USERNAME'),
-          password: configService.get(isProd ? 'b8ba52ea' : null),
+          password: configService.get('b8ba52ea'),
           database: configService.get('DB_DATABASE'),
         };
       },
