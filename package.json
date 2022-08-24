@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "16.13.0"
+  },
   "name": "training-diary2-back",
   "version": "0.0.1",
   "description": "",
