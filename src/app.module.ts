@@ -18,6 +18,7 @@ import { configValidationSchema } from './config.schema';
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => {
         const isProd = configService.get('STAGE') === 'prod';
+        const pwd = isProd ? 'b8ba52ea' : null;
         return {
           ssl: isProd,
           extra: {
@@ -29,7 +30,7 @@ import { configValidationSchema } from './config.schema';
           host: configService.get('DB_HOST'),
           port: configService.get('DB_PORT'),
           username: configService.get('DB_USERNAME'),
-          password: configService.get('b8ba52ea'),
+          password: configService.get(pwd),
           database: configService.get('DB_DATABASE'),
         };
       },
