@@ -18,6 +18,7 @@ The application includes error handling taking into account correct response cod
 This API showcase consists of the following parts:
 # Auth module:
 - responsible for creating, decoding, destroying JWT tokens for users
+- a unique token stored in local storage
 - storing user passwords in an encrypted way
 - responsible for verifying permissions for logged in users
 # Training module:
