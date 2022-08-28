@@ -16,12 +16,12 @@ This example is basically a rest API for training diary application using NestJS
 It provides a possibility to perform sign up users, manage user's trainings.
 The application includes error handling taking into account correct response codes.
 This API showcase consists of the following parts:
-# Auth module:
+## Auth module:
 - responsible for creating, decoding, destroying JWT tokens for users
 - a unique token stored in local storage
 - storing user passwords in an encrypted way
 - responsible for verifying permissions for logged in users
-# Training module:
+## Training module:
  - responsible for CRUD operations on users tasks records
  - operations using TypeORM for mysql database
  - validation of transmitted data
