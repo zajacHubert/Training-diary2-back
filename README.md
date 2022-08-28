@@ -12,7 +12,7 @@ $ npm run start:dev
 Frontend for this backend application in repository "Training-diary2-front".
 
 Features of this project
-This example is basically a rest API for training diary application. 
+This example is basically a rest API for training diary application using NestJS- node framework. 
 It provides a possibility to perform sign up users, manage user's trainings.
 The application includes error handling taking into account correct response codes.
 This API showcase consists of the following parts:
